@@ -24,8 +24,6 @@
     <div id="player">Đang tải trình phát...</div>
 
     <script>
-        var video = document.getElementById('player');
-
         if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
             var engine = new p2pml.hlsjs.Engine();
 
@@ -42,8 +40,6 @@
                 liveSyncDurationCount: 7, // To have at least 7 segments in queue
                 loader: engine.createLoaderClass()
             });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            document.write("Ok");
         } else {
             document.write("Not supported :(");
         }

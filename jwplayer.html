@@ -24,6 +24,7 @@
     <div id="player">Đang tải trình phát...</div>
 
     <script>
+        var video = document.getElementById('player');
 
         if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
             var engine = new p2pml.hlsjs.Engine();
@@ -40,6 +41,11 @@
             p2pml.hlsjs.initJwPlayer(player, {
                 liveSyncDurationCount: 7, // To have at least 7 segments in queue
                 loader: engine.createLoaderClass()
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = 'https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8';
+            video.addEventListener('loadedmetadata',function() {
+                video.play();
             });
         } else {
             document.write("Not supported :(");

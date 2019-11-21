@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <video id="player">Đang tải trình phát...</video>
+    <div id="player">Đang tải trình phát...</div>
 
     <script>
         var video = document.getElementById('player');
@@ -43,10 +43,7 @@
                 loader: engine.createLoaderClass()
             });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = "https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8";
-            video.addEventListener("loadedmetadata",function() {
-                video.play();
-            });
+            document.write("Ok");
         } else {
             document.write("Not supported :(");
         }

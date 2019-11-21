@@ -19,6 +19,12 @@
     <script src="https://content.jwplatform.com/libraries/aG3IMhIy.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
+    <script>
+        function changeJWLogo(playerId, logoUrl) {
+            var logoElem = document.querySelector('#'+playerId + ' .jw-logo');
+            logoElem.style.backgroundImage='url('+logoUrl+')';
+        }
+    </script>
 </head>
 <body>
     <div id="player">Loading...</div>
@@ -46,6 +52,8 @@
                 liveSyncDurationCount: 7, // To have at least 7 segments in queue
                 loader: engine.createLoaderClass()
             });
+            changeJWLogo('player','http://powered-by-haiku.co.uk/wp-content/uploads/2012/05/haiku.gif');
+
         } else {
             var player = jwplayer("player");
             player.setup({

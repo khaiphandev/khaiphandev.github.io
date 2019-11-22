@@ -24,7 +24,7 @@
     <div id="player">Loading...</div>
 
     <script>
-        var file = "https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8";
+        var src = "https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8";
         
         if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
             var engine = new p2pml.hlsjs.Engine();
@@ -32,7 +32,7 @@
             var player = jwplayer("player");
 
             player.setup({
-                file: file,
+                file: src,
                 logo: {
                     file: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
                     link: "https://www.google.com"
@@ -58,7 +58,7 @@
         } else {
             var player = jwplayer("player");
             player.setup({
-                file: file
+                file: src
             });
             //document.write("Not supported :(");
         }

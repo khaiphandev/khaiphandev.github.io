@@ -24,7 +24,7 @@
     <div id="player">Loading...</div>
 
     <script>
-        var src = "https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8";
+        var src = "https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1575738863/ei/j4nrXZKuDIO2owPZtpTgCw/ip/54.179.187.248/id/D4ZBn_wKSbw.1/source/yt_live_broadcast/requiressl/yes/tx/23836435/txs/23836427,23836428,23836432,23836433,23836434,23836435,23836436,23836437,23836438/hfr/1/go/1/keepalive/yes/fexp/23842630/dover/11/itag/0/playlist_type/DVR/sparams/expire,ei,ip,id,source,requiressl,tx,txs,hfr,go,itag,playlist_type/sig/ALgxI2wwRgIhALbSr9sh-sRjNaQCWN5GhkneuRfgcF0t7k9pzh7oQhXDAiEAiLmEtmyAbsPznUcCdAWUKdFut5CbgPCM0FcQWDC1wIo=/file/index.m3u8";
         
         if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
             var engine = new p2pml.hlsjs.Engine();

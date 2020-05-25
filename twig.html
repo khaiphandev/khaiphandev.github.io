@@ -13,8 +13,12 @@
 <script>
 
 var template = twig({
-    id: "tweets",
-    data:  {{ include('') }}  //Template -> Use {% verbatim %} or a direct inline template with {% verbatim %}
+    id: "list", // id is optional, but useful for referencing the template later
+    data: "{% for value in list %}{{ value }}, {% endfor %}"
+});
+
+var output = template.render({
+    list: ["one", "two", "three"]
 });
 
 </script>

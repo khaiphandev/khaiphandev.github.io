@@ -1,6 +1,22 @@
-
 <!-- https://unpkg.com/twig/twig.min.js -->
 <!-- https://cdn.jsdelivr.net/npm/twig/twig.min.js -->
 <!-- https://raw.githubusercontent.com/cdnjs/cdnjs/master/ajax/libs/twig.js/0.8.9/twig.min.js -->
 <!-- https://cdnjs.cloudflare.com/ajax/libs/twig.js/0.8.9/twig.js -->
-https://cdn.jsdelivr.net/npm/twig@1.15.1/twig.min.js
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/twig@1.15.1/twig.min.js"></script>
+ 
+
+<script>
+
+var template = twig({
+    id: "tweets",
+    data:  {{ include('') }}  //Template -> Use {% verbatim %} or a direct inline template with {% verbatim %}
+});
+
+</script>
+</head>
+</html>

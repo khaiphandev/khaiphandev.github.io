@@ -3,9 +3,8 @@ header("Content-Type: text/plain");
 if (isset($_GET['id'])) {
     $source = get_web_page('https://live.90p.tv/' . $_GET['id'] . '.html');
     preg_match('/\[\{file\: "(.*?)"\}\]/', $source['content'], $stream);
-    echo $source['content'];
     if (!isset($stream['1'])) die('Failed');
-    //header("Location: " . $stream['1']);
+    header("Location: " . $stream['1']);
     exit;
 }
 

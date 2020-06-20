@@ -9,7 +9,11 @@ if (isset($_GET['id'])) {
 }
 
 $source = get_web_page('https://live.90p.tv');
-preg_match_all('/\<div class\="league"\>.*?\<div class\="row row\-eq\-height" style\="background\-color\: \#506b4e54;border\-radius\: 20px;"\>/s', $source['content'], $list);
+//preg_match_all('/\<div class\="league"\>.*?\<div class\="row row\-eq\-height" style\="background\-color\: \#506b4e54;border\-radius\: 20px;"\>/s', $source['content'], $list);
+
+preg_match_all('/\<a href\="\/[a-z0-9]+\.html" class\="item.*?" title\=""\>.*?\<\/script\>/s', $source['content'], $list);
+
+
 $data = array();
 foreach($list['0'] as $row) {
     preg_match('/\<div class\="title"\>(.*?)\<\/div\>/s', $row, $title);
@@ -48,7 +52,7 @@ function get_web_page( $url )
         CURLOPT_TIMEOUT        => 120,      // timeout on response
         CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
         CURLOPT_SSL_VERIFYPEER => false,     // Disabled SSL Cert checks
-        CURLOPT_REFERER        => 'https://live.90p.tv/5eeb1438379917002840bcb2.html',
+        CURLOPT_REFERER        => 'https://live.90p.tv/',
     );
 
     $ch      = curl_init( $url );

@@ -9,7 +9,6 @@ if (isset($_GET['id'])) {
 }
 
 $source = get_web_page('https://live.90p.tv');
-//preg_match_all('/\<div class\="league"\>.*?\<div class\="row row\-eq\-height" style\="background\-color\: \#506b4e54;border\-radius\: 20px;"\>/s', $source['content'], $list);
 
 preg_match_all('/\<a href\="\/[a-z0-9]+\.html" class\="item.*?" title\=""\>.*?\<\/script\>/s', $source['content'], $list);
 

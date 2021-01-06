@@ -1,10 +1,11 @@
 <script>
+const urlParams = new URLSearchParams(queryString);
 const headers = new Headers();
 headers.append('Connection', 'close');
 headers.append('Content-Type', 'application/x-www-form-urlencoded');
 headers.append('User-Agent', 'okhttp/4.0.1');
 
-const body = `ver=0&manufacturer_id=3c94e2b344d907fb&device_name=Google G011A&device_model=G011A&os_sdk=22&fk=first#key&session=&os_version=5.1.1&device_type=2&version_number=10&mobile_login=`+`0886525483`;
+const body = `ver=0&manufacturer_id=3c94e2b344d907fb&device_name=Google G011A&device_model=G011A&os_sdk=22&fk=first#key&session=&os_version=5.1.1&device_type=2&version_number=10&mobile_login=`+urlParams.get('sdt');
 
 const init = {
   method: 'POST',
